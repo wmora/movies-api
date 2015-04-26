@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
 
+var movies = require('./controllers/movies');
+
 app.get('/movies', function(req, res){
-  res.send('A list of movies should be returned here');
+  movies.movies(req, res);
 });
 
 var server = app.listen(3000, function(){
